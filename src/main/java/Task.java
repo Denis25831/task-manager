@@ -1,5 +1,5 @@
 public class Task {
-    private String title;
+    private String title = "Task A";
     private String description;
 
     public Task(String title, String description){
