@@ -6,4 +6,7 @@ public class Task {
     public  String getTitle(){
         return title;
     }
+    public void printTitle(){
+        System.out.println(title);
+    }
 }
