@@ -22,5 +22,10 @@ public class TaskTest {
         Task task = new Task("Learn java");
         assertFalse(task.isCompleted());
     }
+    @Test
+    void shouldHaveCreationDate(){
+        Task task = new Task("Learn Maven");
+        assertEquals("2026-10-02", task.getCreatedAt());
+    }
 
 }
