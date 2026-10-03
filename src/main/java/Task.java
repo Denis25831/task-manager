@@ -8,7 +8,7 @@ public class Task {
 
     public Task(String title){
        this.title = title;
-       this.createdAt = LocalDate.of(2026, 10, 2);
+       this.createdAt = LocalDate.now();
 
     }
 
