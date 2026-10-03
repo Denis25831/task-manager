@@ -1,6 +1,8 @@
+import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TaskTest {
 
@@ -25,7 +27,7 @@ public class TaskTest {
     @Test
     void shouldHaveCreationDate(){
         Task task = new Task("Learn Maven");
-        assertEquals("2026-10-02", task.getCreatedAt());
+        assertEquals(LocalDate.of(2026, 10, 2), task.getCreatedAt());
     }
 
 }

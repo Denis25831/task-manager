@@ -1,17 +1,18 @@
+import java.time.LocalDate;
 public class Task {
 
     private String title = "Task A";
     private String description;
     private boolean completed;
-    private String createdAt;
+    private LocalDate createdAt;
 
     public Task(String title){
        this.title = title;
-       this.createdAt = "2026-10-02";
+       this.createdAt = LocalDate.of(2026, 10, 2);
 
     }
 
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt(){
         return createdAt;
     }
 
