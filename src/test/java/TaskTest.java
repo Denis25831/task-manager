@@ -27,7 +27,12 @@ public class TaskTest {
     @Test
     void shouldHaveCreationDate(){
         Task task = new Task("Learn Maven");
-        assertEquals(LocalDate.of(2026, 10, 2), task.getCreatedAt());
+        assertEquals(LocalDate.now(), task.getCreatedAt());
+    }
+    @Test
+    void shouldReturnTaskSummary(){
+        Task task = new Task("Learn Java");
+        assertEquals("Learn Java - not completed", task.getSummary());
     }
 
 }

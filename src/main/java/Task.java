@@ -11,6 +11,9 @@ public class Task {
        this.createdAt = LocalDate.now();
 
     }
+    public  String getSummary(){
+        return title + " - " + (completed ? "completed" : "not completed");
+    }
 
     public LocalDate getCreatedAt(){
         return createdAt;
