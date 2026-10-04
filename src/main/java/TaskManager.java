@@ -30,8 +30,18 @@ public class TaskManager {
         for (Task task : tasks) {
             if (task.getTitle().equals(title)) {
                 return task;
+
             }
         }
         return null;
+    }
+    public List<Task> getCompletedTasks(){
+        List<Task> completedTasks = new ArrayList<>();
+        for (Task task : tasks){
+            if (task.isCompleted()){
+                completedTasks.add(task);
+            }
+        }
+        return completedTasks;
     }
 }

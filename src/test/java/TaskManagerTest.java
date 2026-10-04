@@ -62,4 +62,22 @@ public class TaskManagerTest {
         TaskManager manager = new TaskManager();
         assertThrows(IndexOutOfBoundsException.class, () -> manager.completeTask(0));
     }
+    @Test
+    void shouldReturnCompletedTasks(){
+        TaskManager manager = new TaskManager();
+        Task task1 = new Task("Learn Java");
+        Task task2 = new Task("Learn Maven");
+        task1.complete();
+        manager.addTask(task1);
+        manager.addTask(task2);
+        assertEquals(1, manager.getCompletedTasks().size());
+        assertEquals("Learn Java", manager.getCompletedTasks().get(0).getTitle());
+    }
+    @Test
+    void shouldReturnEmptyListWhenNoTasksCompleted(){
+        TaskManager manager = new TaskManager();
+        manager.addTask(new Task("Learn Java"));
+        manager.addTask(new Task("Learn Maven"));
+        assertEquals(0, manager.getCompletedTasks().size());
+    }
 }
