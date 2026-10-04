@@ -44,4 +44,13 @@ public class TaskManager {
         }
         return completedTasks;
     }
+    public List<Task> getIncompleteTasks(){
+        List<Task> incompleteTasks = new ArrayList<>();
+        for (Task task : tasks){
+            if (!task.isCompleted()){
+                incompleteTasks.add(task);
+            }
+        }
+        return incompleteTasks;
+    }
 }

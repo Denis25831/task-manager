@@ -102,4 +102,26 @@ public class TaskManagerTest {
         assertEquals(task1, manager.getTasks().get(0));
         assertEquals(task2, manager.getTasks().get(1));
     }
+    @Test
+    void shouldReturnIncompleteTasks(){
+        TaskManager manager = new TaskManager();
+        Task task1 = new Task("Learn Java");
+        Task task2 = new Task("Learn Maven");
+        task1.complete();
+        manager.addTask(task1);
+        manager.addTask(task2);
+        assertEquals(1, manager.getIncompleteTasks().size());
+        assertEquals("Learn Maven", manager.getIncompleteTasks().get(0).getTitle());
+    }
+    @Test
+    void shouldReturnEmptyListWhenAllTasksCompleted(){
+        TaskManager manager = new TaskManager();
+        Task task1 = new Task("Learn Java");
+        Task task2 = new Task("Learn Maven");
+        task1.complete();
+        task2.complete();
+        manager.addTask(task1);
+        manager.addTask(task2);
+        assertEquals(0, manager.getIncompleteTasks().size());
+    }
 }
