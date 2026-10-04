@@ -2,7 +2,6 @@ import java.time.LocalDate;
 public class Task {
 
     private String title = "Task A";
-    private String description;
     private boolean completed;
     private LocalDate createdAt;
 
@@ -23,9 +22,6 @@ public class Task {
         return title;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     public boolean isCompleted() {
         return completed;
@@ -35,9 +31,6 @@ public class Task {
         this.completed = true;
     }
 
-    public void printTitle(){
-        System.out.println(title);
-    }
 
 
 }

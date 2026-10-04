@@ -34,5 +34,11 @@ public class TaskTest {
         Task task = new Task("Learn Java");
         assertEquals("Learn Java - not completed", task.getSummary());
     }
+    @Test
+    void shouldReturnCompletedTaskSummary(){
+        Task task = new Task("Learn Java");
+        task.complete();
+        assertEquals("Learn Java - completed", task.getSummary());
+    }
 
 }
