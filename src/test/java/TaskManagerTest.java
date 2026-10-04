@@ -80,4 +80,26 @@ public class TaskManagerTest {
         manager.addTask(new Task("Learn Maven"));
         assertEquals(0, manager.getCompletedTasks().size());
     }
+    @Test
+    void shouldFindTaskIgnoringCase(){
+        TaskManager manager = new TaskManager();
+        manager.addTask(new Task("Learn Java"));
+        Task found = manager.findByTitle("learn java");
+        assertEquals("Learn Java", found.getTitle());
+    }
+    @Test
+    void shouldHaveZeroTasksByDefault(){
+        TaskManager manager = new TaskManager();
+        assertEquals(0, manager.getTaskCount());
+    }
+    @Test
+    void shouldReturnAddedTasks(){
+        TaskManager manager = new TaskManager();
+        Task task1 = new Task("Learn Java");
+        Task task2 = new Task("Learn Maven");
+        manager.addTask(task1);
+        manager.addTask(task2);
+        assertEquals(task1, manager.getTasks().get(0));
+        assertEquals(task2, manager.getTasks().get(1));
+    }
 }

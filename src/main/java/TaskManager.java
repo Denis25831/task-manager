@@ -28,7 +28,7 @@ public class TaskManager {
 
     public Task findByTitle(String title) {
         for (Task task : tasks) {
-            if (task.getTitle().equals(title)) {
+            if (task.getTitle().equalsIgnoreCase(title)) {
                 return task;
 
             }
