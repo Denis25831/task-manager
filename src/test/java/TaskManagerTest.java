@@ -124,4 +124,12 @@ public class TaskManagerTest {
         manager.addTask(task2);
         assertEquals(0, manager.getIncompleteTasks().size());
     }
+    @Test
+    void shouldClearAllTasks(){
+        TaskManager manager = new TaskManager();
+        manager.addTask(new Task("Learn Java"));
+        manager.addTask(new Task("Learn Maven"));
+        manager.clearTasks();
+        assertEquals(0, manager.getTaskCount());
+    }
 }

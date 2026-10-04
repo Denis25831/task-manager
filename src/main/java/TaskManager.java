@@ -53,4 +53,7 @@ public class TaskManager {
         }
         return incompleteTasks;
     }
+    public void clearTasks(){
+        tasks.clear();
+    }
 }
