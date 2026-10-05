@@ -132,4 +132,16 @@ public class TaskManagerTest {
         manager.clearTasks();
         assertEquals(0, manager.getTaskCount());
     }
+    @Test
+    void  shouldCountCompletedTasks(){
+        TaskManager manager = new TaskManager();
+            Task task1 = new Task("Learn Java");
+            Task task2 = new Task("Learn Maven");
+
+            task1.complete();
+            manager.addTask(task1);
+            manager.addTask(task2);
+            assertEquals(1, manager.getCompletedTaskCount());
+
+    }
 }

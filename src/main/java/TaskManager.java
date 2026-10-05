@@ -56,4 +56,8 @@ public class TaskManager {
     public void clearTasks(){
         tasks.clear();
     }
+    public int getCompletedTaskCount(){
+        return getCompletedTasks().size();
+
+    }
 }
